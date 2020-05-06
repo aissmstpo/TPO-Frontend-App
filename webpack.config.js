@@ -35,5 +35,9 @@ module.exports = {
       }
     ]
   },
+  entry: './src/index.js',
+  output: {
+    publicPath: '/',
+  },
   plugins: [htmlWebpackPlugin]
 };
