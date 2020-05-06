@@ -8,7 +8,7 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import { Typography } from '@material-ui/core';
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@material-ui/core/';
-
+/**this is state for storing open/display state the overlay/dialog box */
 function ViewStudents(props) {
 	const [open, setOpen] = React.useState(false);
 
@@ -20,6 +20,13 @@ function ViewStudents(props) {
 		setOpen(false);
 	};
 
+	/**
+	 * Thid func crates the rows of table
+	 * @param {string} class_
+	 * @param {sring} board
+	 * @param {*} year
+	 * @param {float} percentage
+	 */
 	function createData(class_, board, year, percentage) {
 		return { class_, board, year, percentage };
 	}
@@ -78,9 +85,7 @@ function ViewStudents(props) {
 					{
 						icon: () => <VisibilityIcon />,
 						tooltip: 'View User',
-						onClick: () => {
-							setOpen(true);
-						},
+						onClick: handleClickOpen,
 					},
 				]}
 				data={state.data}
