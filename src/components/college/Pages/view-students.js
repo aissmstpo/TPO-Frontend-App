@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import MaterialTable from 'material-table';
 import VisibilityIcon from '@material-ui/icons/Visibility';
 import Button from '@material-ui/core/Button';
@@ -10,12 +10,13 @@ import { Typography } from '@material-ui/core';
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@material-ui/core/';
 /**this is state for storing open/display state the overlay/dialog box */
 function ViewStudents(props) {
-	const [open, setOpen] = React.useState(false);
+	const [open, setOpen] = useState(false);
 
-	const handleClickOpen = () => {
+	/**Handel view details */
+	const handleClickOpen = (event, rowData) => {
 		setOpen(true);
 	};
-
+	/**Handel close view details */
 	const handleClose = () => {
 		setOpen(false);
 	};
@@ -84,8 +85,10 @@ function ViewStudents(props) {
 				actions={[
 					{
 						icon: () => <VisibilityIcon />,
-						tooltip: 'View User',
-						onClick: handleClickOpen,
+						tooltip: 'View details',
+						onClick: (event, rowData) => {
+							handleClickOpen(event, rowData);
+						},
 					},
 				]}
 				data={state.data}
