@@ -1,9 +1,9 @@
 import React from 'react';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import MainContent from './components/college/MainContent';
-import Header from './components/college/Header';
+import MainContent from './containers/MainContent';
+import Header from './containers/Header';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
-import { BrowserRouter as Router, Switch, Route, Link, useParams, useRouteMatch } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 // import Temp from './temp'
 /**
  * Template File
@@ -25,7 +25,6 @@ function App() {
 				<MainContent />
 			</Router>
 		</div>
-		// <Temp/>
 	);
 }
 

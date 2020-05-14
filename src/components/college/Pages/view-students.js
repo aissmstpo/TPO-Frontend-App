@@ -1,13 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import MaterialTable from 'material-table';
-import VisibilityIcon from '@material-ui/icons/Visibility';
-import Button from '@material-ui/core/Button';
-import Dialog from '@material-ui/core/Dialog';
-import DialogActions from '@material-ui/core/DialogActions';
-import DialogContent from '@material-ui/core/DialogContent';
-import DialogTitle from '@material-ui/core/DialogTitle';
-import { Typography } from '@material-ui/core';
+import { Typography, Button, Dialog, DialogActions, DialogContent, DialogTitle } from '@material-ui/core';
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@material-ui/core/';
+import VisibilityIcon from '@material-ui/icons/Visibility';
+import axios from 'axios';
+
 /**this is state for storing open/display state the overlay/dialog box */
 function ViewStudents(props) {
 	const [open, setOpen] = useState(false);
@@ -34,7 +31,7 @@ function ViewStudents(props) {
 
 	const rows = [createData('10th', 'SSC', '2015', '90')];
 
-	const [state, setState] = React.useState({
+	const [tableData, setTableData] = useState({
 		columns: [
 			{ title: 'SR.NO', field: 'srNo', type: 'numeric' },
 			{ title: 'Name', field: 'name' },
@@ -76,12 +73,22 @@ function ViewStudents(props) {
 			},
 		],
 	});
+	/****TODO add URL and setTableData */
+	// useEffect(()=>{
+	// 	axios.get('URL')
+	// 	.then(response=>{
+	// 		console.log(response);
+	// 	})
+	// 	.catch(err=>{
+	// 		console.error(err);
+	// 	});
+	// },[])
 
 	return (
 		<React.Fragment>
 			<MaterialTable
 				title="Student Details"
-				columns={state.columns}
+				columns={tableData.columns}
 				actions={[
 					{
 						icon: () => <VisibilityIcon />,
@@ -91,7 +98,7 @@ function ViewStudents(props) {
 						},
 					},
 				]}
-				data={state.data}
+				data={tableData.data}
 				options={{
 					grouping: true,
 					headerStyle: {
