@@ -112,7 +112,13 @@ function ViewStudents(props) {
 			{/**This is for the Popup generated on clicking student for details
 			 * #TODO handel edit and save
 			 */}
-			<Dialog open={open} onClose={handleClose} aria-labelledby="student-view-title" fullWidth>
+			<Dialog
+				open={open}
+				onClose={handleClose}
+				aria-labelledby="student-view-title"
+				fullWidth
+				disableEnforceFocus
+			>
 				<DialogTitle id="form-dialog-title">Name</DialogTitle>
 				<DialogContent>
 					<Typography variant="h6">Personal Details:</Typography>

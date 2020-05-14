@@ -25,22 +25,22 @@ const useStyles = makeStyles((theme) => ({
 function ApproveStudents(props) {
 	const [openViewDialogue, setOpenViewDialogue] = useState(false);
 
-	/**Handel view details */
+	/**Handel view details dailogue */
 	const handleClickOpenDialogue1 = (event, rowData) => {
 		setOpenViewDialogue(true);
 	};
-	/**Handel close view details */
+	/**Handel close view details dialogue */
 	const handleCloseDialogue1 = () => {
 		setOpenViewDialogue(false);
 	};
 
 	const [openViewDialogue2, setOpenViewDialogue2] = useState(false);
 
-	/**Handel view details */
+	/**Handel reject details dialogue*/
 	const handleClickOpenDialogue2 = (event, rowData) => {
 		setOpenViewDialogue2(true);
 	};
-	/**Handel close view details */
+	/**Handel close reject details  dialogue*/
 	const handleCloseDialogue2 = () => {
 		setOpenViewDialogue2(false);
 	};
@@ -114,7 +114,7 @@ function ApproveStudents(props) {
 	return (
 		<React.Fragment>
 			<MaterialTable
-				title="Student Details"
+				title="Approve Registered Student"
 				columns={tableData.columns}
 				actions={[
 					{
