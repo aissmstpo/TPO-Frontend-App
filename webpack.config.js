@@ -42,7 +42,7 @@ module.exports = {
 	output: {
 		path: path.join(__dirname, 'dist'),
 		filename: '[name].bundel.js',
-		publicPath: path.join(__dirname, 'dist'),
+		publicPath: '/',
 	},
 	devServer: {
 		historyApiFallback: true,
