@@ -1,19 +1,16 @@
 import React, { Fragment } from 'react';
-
 import { Divider, List, ListItem, ListItemIcon, ListItemText, Collapse, Typography } from '@material-ui/core';
-import FormatListNumberedIcon from '@material-ui/icons/FormatListNumbered';
-import {
-	ExpandLess,
-	ExpandMore,
-	FormatListNumberedIcon,
-	CheckCircleIcon,
-	Info,
-	PeopleIcon,
-	BusinessIcon,
-	QuestionAnswerIcon,
-	SchoolIcon,
-	HomeIcon,
-} from '@material-ui/icons';
+import QuestionAnswerIcon from '@material-ui/icons/QuestionAnswer';
+import { ExpandLess, ExpandMore } from '@material-ui/icons';
+import HomeIcon from '@material-ui/icons/Home';
+import GroupAddIcon from '@material-ui/icons/GroupAdd';
+import PlayArrowIcon from '@material-ui/icons/PlayArrow';
+import EventIcon from '@material-ui/icons/Event';
+import DetailIcon from '@material-ui/icons/Details';
+import CheckCircleIcon from '@material-ui/icons/CheckCircle';
+import LocalPostOfficeIcon from '@material-ui/icons/LocalPostOffice';
+import PostAddIcon from '@material-ui/icons/PostAdd';
+import BusinessIcon from '@material-ui/icons/Business';
 import { useTheme, makeStyles } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom';
 
@@ -62,46 +59,23 @@ function SideBar(props) {
 	 */
 	const menuItems = [
 		{
-			title: 'Student',
-			titleIcon: <PeopleIcon />,
-			Sublist: ['View Students', 'Approve Registrations'],
-			SublistIcon: [<FormatListNumberedIcon />, <CheckCircleIcon />],
-			SublistLink: ['/view-students', '/approve-students'],
-		},
-		{
-			title: 'Company',
-			titleIcon: <BusinessIcon />,
+			title: 'Placement',
+			titleIcon: <GroupAddIcon />,
 			Sublist: [
-				'View Company Details',
-				'Approve Registrations',
-				'Approve Date for Campus Placement',
-				'View Upcoming Placements',
-				'View Ongoing Placements',
-				'View Placement Completed',
+				'Start Placement Drive',
+				'Request Phase Date',
+				'Current Placement Details',
+				'View Placements Held',
 			],
-			SublistIcon: [
-				<FormatListNumberedIcon />,
-				<CheckCircleIcon />,
-				<CheckCircleIcon />,
-				<FormatListNumberedIcon />,
-				<FormatListNumberedIcon />,
-				<FormatListNumberedIcon />,
-			],
-			SublistLink: [
-				'/view-company',
-				'/approve-company',
-				'/approve-date',
-				'/upcoming-placements',
-				'/ongoing-placements',
-				'/view-placements',
-			],
+			SublistIcon: [<PlayArrowIcon />, <EventIcon />, <DetailIcon />, <CheckCircleIcon />],
+			SublistLink: ['start-placement-drive', 'request-date', 'current-placement', 'view-placements'],
 		},
 		{
-			title: 'College',
-			titleIcon: <SchoolIcon />,
-			Sublist: ['View Placement Statistics', 'QnA'],
-			SublistIcon: [<FormatListNumberedIcon />, <QuestionAnswerIcon />],
-			SublistLink: ['/statistics', '/QnA'],
+			title: 'Notices & Posts',
+			titleIcon: <BusinessIcon />,
+			Sublist: ['View Notices and Posts', 'Create Post/Notice', 'QnA'],
+			SublistIcon: [<LocalPostOfficeIcon />, <PostAddIcon />, <QuestionAnswerIcon />],
+			SublistLink: ['view-notices', 'create-post', 'QnA'],
 		},
 	];
 
@@ -159,15 +133,6 @@ function SideBar(props) {
 					);
 				})}
 				<Divider />
-
-				<Link style={{ color: 'inherit', textDecoration: 'none' }} to="/about-us">
-					<ListItem button key={'About Us'}>
-						<ListItemIcon>
-							<Info />
-						</ListItemIcon>
-						<ListItemText primary={'About Us'} />
-					</ListItem>
-				</Link>
 			</List>
 		</div>
 	);

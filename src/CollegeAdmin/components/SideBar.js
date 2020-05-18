@@ -2,18 +2,14 @@ import React, { Fragment } from 'react';
 
 import { Divider, List, ListItem, ListItemIcon, ListItemText, Collapse, Typography } from '@material-ui/core';
 import FormatListNumberedIcon from '@material-ui/icons/FormatListNumbered';
-import {
-	ExpandLess,
-	ExpandMore,
-	FormatListNumberedIcon,
-	CheckCircleIcon,
-	Info,
-	PeopleIcon,
-	BusinessIcon,
-	QuestionAnswerIcon,
-	SchoolIcon,
-	HomeIcon,
-} from '@material-ui/icons';
+import CheckCircleIcon from '@material-ui/icons/CheckCircle';
+import Info from '@material-ui/icons/Info';
+import PeopleIcon from '@material-ui/icons/People';
+import BusinessIcon from '@material-ui/icons/Business';
+import QuestionAnswerIcon from '@material-ui/icons/QuestionAnswer';
+import { ExpandLess, ExpandMore } from '@material-ui/icons';
+import SchoolIcon from '@material-ui/icons/School';
+import HomeIcon from '@material-ui/icons/Home';
 import { useTheme, makeStyles } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom';
 

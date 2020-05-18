@@ -2,18 +2,14 @@ import React from 'react';
 import { useTheme, makeStyles } from '@material-ui/core/styles';
 import { Switch, Route } from 'react-router-dom';
 import {
-	AboutUs,
-	ApproveCompany,
-	ApproveDate,
-	ApproveStudents,
+	CreateNotice,
+	CurrentDatails,
 	Home,
-	OngoingPlacements,
 	QnA,
-	Statistics,
-	UpcomingPlacements,
-	ViewCompany,
+	RequestDate,
+	StartPlacement,
+	ViewNotice,
 	ViewPlacements,
-	ViewStudents,
 } from '../containers';
 
 const drawerWidth = 240;
@@ -43,59 +39,39 @@ function MainContent(props) {
 			main: () => <Home />,
 		},
 		{
-			path: '/view-students',
+			path: '/start-placement-drive',
 			exact: false,
-			main: () => <ViewStudents />,
+			main: () => <StartPlacement />,
 		},
 		{
-			path: '/approve-students',
+			path: '/request-date',
 			exact: false,
-			main: () => <ApproveStudents />,
+			main: () => <RequestDate />,
 		},
 		{
-			path: '/about-us',
+			path: '/current-placement',
 			exact: false,
-			main: () => <AboutUs />,
+			main: () => <CurrentDatails />,
 		},
 		{
-			path: '/approve-company',
+			path: '/view-placements',
 			exact: true,
-			main: () => <ApproveCompany />,
+			main: () => <ViewPlacements />,
 		},
 		{
-			path: '/approve-date',
+			path: '/view-notices',
 			exact: false,
-			main: () => <ApproveDate />,
+			main: () => <ViewNotice />,
 		},
 		{
-			path: '/ongoing-placements',
+			path: '/create-post',
 			exact: false,
-			main: () => <OngoingPlacements />,
+			main: () => <CreateNotice />,
 		},
 		{
 			path: '/QnA',
 			exact: false,
 			main: () => <QnA />,
-		},
-		{
-			path: '/statistics',
-			exact: true,
-			main: () => <Statistics />,
-		},
-		{
-			path: '/upcoming-placements',
-			exact: false,
-			main: () => <UpcomingPlacements />,
-		},
-		{
-			path: '/view-company',
-			exact: false,
-			main: () => <ViewCompany />,
-		},
-		{
-			path: '/view-placements',
-			exact: false,
-			main: () => <ViewPlacements />,
 		},
 	];
 	return (
@@ -109,12 +85,6 @@ function MainContent(props) {
 				</Switch>
 			</main>
 		</React.Fragment>
-		// <React.Fragment>
-		// 	<main className={classes.content}>
-		// 	<div className={classes.toolbar} />
-		// 	<Temp/>
-		// 	</main>
-		// </React.Fragment>
 	);
 }
 
