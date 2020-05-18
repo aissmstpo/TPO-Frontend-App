@@ -14,8 +14,7 @@ import {
 	ViewCompany,
 	ViewPlacements,
 	ViewStudents,
-} from '../components/college/Pages';
-import Temp from '../temp';
+} from '../containers';
 
 const drawerWidth = 240;
 const useStyles = makeStyles((theme) => ({

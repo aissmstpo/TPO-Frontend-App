@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import MainContent from './containers/MainContent';
-import Header from './containers/Header';
+import CollegeAdmin from './CollegeAdmin';
+import Company from './Company';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import { BrowserRouter as Router } from 'react-router-dom';
 // import Temp from './temp'
@@ -16,14 +16,13 @@ function App() {
 		},
 	}));
 
+	const [userRole, setUserRole] = useState('admin');
+
 	const classes = useStyles();
 	return (
 		<div className={classes.root}>
 			<CssBaseline /> {/*This is to normailze the CSS (Builtin component)*/}
-			<Router>
-				<Header />
-				<MainContent />
-			</Router>
+			<Router>{userRole == 'admin' ? <CollegeAdmin /> : <Company />}</Router>
 		</div>
 	);
 }
