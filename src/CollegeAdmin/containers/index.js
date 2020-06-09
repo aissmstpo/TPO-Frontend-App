@@ -10,3 +10,6 @@ export { default as UpcomingPlacements } from './upcoming-placements';
 export { default as ViewCompany } from './view-company';
 export { default as ViewPlacements } from './view-placements';
 export { default as ViewStudents } from './view-students';
+export { default as Login } from './Login/login';
+export { default as Register } from './Login/register';
+import '../containers/Login/style.scss';
